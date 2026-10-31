@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حكايتنا | ٨ شهور من الصحبة</title>
+    <!-- خطوط جوجل العربية للتصميم الرفيع -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- خلفية القلوب والورود المتحركة -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <!-- ترويسة الموقع Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="badge">🌸 ذكرى صديقتي الصدوقة 🌸</div>
+            <h1 class="title">حكايتنا معاً</h1>
+            <p class="subtitle">هدية صغيرة بمناسبة مرور ٨ شهور من الصحبة الجميلة والذكريات لا تُنسى.</p>
+            
+            <!-- مشغل الأغنية "يا صاحبتي" -->
+            <div class="audio-player-card">
+                <div class="audio-info">
+                    <span class="music-icon">🎵</span>
+                    <div>
+                        <strong>أغنية: يا صاحبتي</strong>
+                        <small>نشيد الذكريات والصحبة</small>
+                    </div>
+                </div>
+                <audio controls src="./media/music.mp3" class="audio-element">
+                    متصفحك لا يدعم تشغيل الصوت.
+                </audio>
+            </div>
+        </div>
+    </header>
+
+    <!-- بوابة التاريخ الماسي -->
+    <section class="section date-gate-section">
+        <div class="container">
+            <div class="card date-card">
+                <h2>🔒 بوابة الذكريات</h2>
+                <p>أدخلي تاريخ الذكريات للفتح (21/2/2026):</p>
+                <div class="date-input-group">
+                    <input type="text" id="dateInput" placeholder="DD/MM/YYYY" value="21/2/2026" />
+                    <button id="unlockBtn" class="btn btn-primary">فتح الذكريات ✨</button>
+                </div>
+                <div id="dateErrorMessage" class="error-text hidden">التاريخ غير صحيح! جربي التاريخ الخاص بنا.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المعرض المغلق/المفتوح -->
+    <section id="gallerySection" class="section gallery-section hidden">
+        <div class="container">
+            <h2 class="section-title">✨ معرض الصور والفيديوهات ✨</h2>
+            <p class="section-desc">٢٧ صورة و١٢ فيديو تخلد أجمل لحظاتنا معاً</p>
+
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-tab="images">الصور (27)</button>
+                <button class="tab-btn" data-tab="videos">الفيديوهات (12)</button>
+            </div>
+
+            <!-- شبكة الصور -->
+            <div id="imagesGrid" class="media-grid">
+                <!-- يتم توليد 27 صورة تلقائياً بواسطة JavaScript -->
+            </div>
+
+            <!-- شبكة الفيديوهات -->
+            <div id="videosGrid" class="media-grid hidden">
+                <!-- يتم توليد 12 فيديو تلقائياً بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- لعبة الـ 10 معلومات (Local Storage & JSON Export) -->
+    <section class="section game-section">
+        <div class="container">
+            <div class="card game-card">
+                <h2 class="section-title">🎮 لعبة 10 معلومات عن الصحبة</h2>
+                <p class="section-desc">اكتبي إجاباتك لكل طرف واحتفظي بها محلياً أو شاركيها كملف ملف JSON.</p>
+
+                <div class="party-selector">
+                    <button class="party-btn active" id="btnParty1">الطرف الأول (أنا)</button>
+                    <button class="party-btn" id="btnParty2">الطرف الثاني (صديقتي)</button>
+                </div>
+
+                <form id="gameForm" class="game-form">
+                    <div id="questionsContainer" class="questions-list">
+                        <!-- تُنشأ 10 أسئلة ديناميكياً -->
+                    </div>
+
+                    <div class="game-actions">
+                        <button type="submit" class="btn btn-success">💾 حفظ الإجابات محلياً</button>
+                        <button type="button" id="exportBtn" class="btn btn-secondary">📥 تحميل الإجابات (JSON)</button>
+                        <label class="btn btn-outline file-label">
+                            📤 استيراد إجابات
+                            <input type="file" id="importInput" accept=".json" class="hidden-file-input" />
+                        </label>
+                    </div>
+                </form>
+                <div id="gameStatus" class="status-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الرسالة الختامية -->
+    <footer class="footer">
+        <div class="container">
+            <p class="love-message">❤️ دمتِ لي أحسن وأجمل صديقة طوال العمر ❤️</p>
+            <small>© حكايتنا - ٨ شهور من الصحبة الوفية</small>
+        </div>
+    </footer>
+
+    <!-- النافذة المنبثقة للصور (Lightbox) -->
+    <div id="lightbox" class="lightbox hidden">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img id="lightboxImg" class="lightbox-content" src="" alt="صورة كبيرة" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

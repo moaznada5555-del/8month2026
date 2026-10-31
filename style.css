@@ -1,0 +1,341 @@
+/* الإعدادات الأساسية والتصميم */
+:root {
+    --bg-color: #fffaf6;
+    --primary-color: #e86375;
+    --primary-hover: #d44d60;
+    --accent-color: #ffd1d7;
+    --card-bg: #ffffff;
+    --text-color: #4a3e3d;
+    --text-muted: #8c7a78;
+    --border-radius: 16px;
+    --shadow: 0 8px 30px rgba(232, 99, 117, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    direction: rtl;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* القلوب المتحركة خلف الصفحة */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: var(--accent-color);
+    opacity: 0.6;
+    animation: floatUp 8s infinite linear;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+/* القسم العلوي Hero */
+.hero {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0 40px;
+    text-align: center;
+    background: linear-gradient(180deg, #ffeef1 0%, var(--bg-color) 100%);
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-family: 'Amiri', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* مشغل الموسيقى */
+.audio-player-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-bg);
+    padding: 16px 24px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 450px;
+    margin: 0 auto;
+    border: 1px solid var(--accent-color);
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: right;
+    width: 100%;
+}
+
+.music-icon {
+    font-size: 1.8rem;
+}
+
+.audio-element {
+    width: 100%;
+    height: 40px;
+}
+
+/* الأقسام والبطاقات */
+.section {
+    position: relative;
+    z-index: 1;
+    padding: 40px 0;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.date-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px dashed var(--primary-color);
+}
+
+.date-input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+input[type="text"], input[type="file"] {
+    padding: 12px 16px;
+    border: 1px solid #e0d0cf;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 99, 117, 0.2);
+}
+
+/* الأزرار */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: var(--primary-hover); }
+
+.btn-success { background: #4caf50; color: white; }
+.btn-success:hover { background: #43a047; }
+
+.btn-secondary { background: #795548; color: white; }
+.btn-secondary:hover { background: #6d4c41; }
+
+.btn-outline { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); }
+.btn-outline:hover { background: var(--accent-color); }
+
+/* المعرض Tabs Grid */
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.tab-btn {
+    padding: 10px 24px;
+    background: #f0e4e2;
+    border: none;
+    border-radius: 20px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.media-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    background: #f8f0ef;
+}
+
+.media-item img, .media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.media-item:hover img {
+    transform: scale(1.08);
+}
+
+/* لعبة المعلومات */
+.party-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.party-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--accent-color);
+    background: transparent;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.party-btn.active {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+
+.question-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.question-item label {
+    font-weight: 500;
+}
+
+.game-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-file-input { display: none; }
+.file-label { display: inline-block; cursor: pointer; }
+
+/* عناصر التحكم والحالات */
+.hidden { display: none !important; }
+.error-text { color: #d32f2f; margin-top: 10px; font-size: 0.9rem; }
+.status-message { margin-top: 15px; font-weight: bold; color: #388e3c; }
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px; right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #fdf2f4;
+    color: var(--text-muted);
+}
+
+.love-message {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
