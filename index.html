@@ -4,121 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>حكايتنا | ٨ شهور من الصحبة</title>
-    <!-- خطوط جوجل العربية للتصميم الرفيع -->
+    <!-- استيراد خطوط جوجل العربية لضمان مظهر احترافي -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- خلفية القلوب والورود المتحركة -->
-    <div class="floating-hearts" id="floatingHearts"></div>
+    <!-- خلفية الورود المتحركة (تأثير بصري جامل) -->
+    <div class="floating-roses" id="floatingRoses"></div>
 
-    <!-- ترويسة الموقع Hero Section -->
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="badge">🌸 ذكرى صديقتي الصدوقة 🌸</div>
-            <h1 class="title">حكايتنا معاً</h1>
-            <p class="subtitle">هدية صغيرة بمناسبة مرور ٨ شهور من الصحبة الجميلة والذكريات لا تُنسى.</p>
+    <!-- القسم العلوي (الترويسة) -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="main-badge">🌸 ذكرى صحبة غالية 🌸</div>
+            <h1 class="main-title">حكايتنا</h1>
+            <p class="main-subtitle">هدية صغيرة بمناسبة مرور ٨ شهور من الضحك، الدعم، والذكريات الحلوة.</p>
             
-            <!-- مشغل الأغنية "يا صاحبتي" -->
-            <div class="audio-player-card">
-                <div class="audio-info">
-                    <span class="music-icon">🎵</span>
+            <!-- مشغل الأغنية (يا صاحبتي) -->
+            <div class="music-player-card">
+                <div class="music-info">
+                    <span class="disc-icon">🎵</span>
                     <div>
-                        <strong>أغنية: يا صاحبتي</strong>
-                        <small>نشيد الذكريات والصحبة</small>
+                        <strong>يا صاحبتي</strong>
+                        <small>إهداء من القلب</small>
                     </div>
                 </div>
-                <audio controls src="./media/music.mp3" class="audio-element">
+                <!-- تأكد من وجود ملف music.mp3 في مجلد media -->
+                <audio controls src="./media/music.mp3" class="audio-control">
                     متصفحك لا يدعم تشغيل الصوت.
                 </audio>
             </div>
         </div>
     </header>
 
-    <!-- بوابة التاريخ الماسي -->
+    <!-- بوابة الذكريات (قفل التاريخ) -->
     <section class="section date-gate-section">
         <div class="container">
-            <div class="card date-card">
-                <h2>🔒 بوابة الذكريات</h2>
-                <p>أدخلي تاريخ الذكريات للفتح (21/2/2026):</p>
+            <div class="card lock-card">
+                <h2>🔒 صندوق الذكريات مقفل</h2>
+                <p>يفتح فقط في تاريخ ذكراكم المميز (21/2/2026):</p>
                 <div class="date-input-group">
                     <input type="text" id="dateInput" placeholder="DD/MM/YYYY" value="21/2/2026" />
-                    <button id="unlockBtn" class="btn btn-primary">فتح الذكريات ✨</button>
+                    <button id="unlockBtn" class="btn-primary">فتح الصندوق ✨</button>
                 </div>
-                <div id="dateErrorMessage" class="error-text hidden">التاريخ غير صحيح! جربي التاريخ الخاص بنا.</div>
+                <div id="dateErrorMessage" class="error-message hidden">التاريخ غير صحيح. حاولي مرة أخرى!</div>
             </div>
         </div>
     </section>
 
-    <!-- المعرض المغلق/المفتوح -->
+    <!-- معرض الصور والفيديوهات (مخفي حتى يتم إدخال التاريخ الصحيح) -->
     <section id="gallerySection" class="section gallery-section hidden">
         <div class="container">
-            <h2 class="section-title">✨ معرض الصور والفيديوهات ✨</h2>
-            <p class="section-desc">٢٧ صورة و١٢ فيديو تخلد أجمل لحظاتنا معاً</p>
-
+            <h2 class="section-header">محطات من رحلتنا</h2>
+            
+            <!-- تبويب المعرض -->
             <div class="gallery-tabs">
-                <button class="tab-btn active" data-tab="images">الصور (27)</button>
-                <button class="tab-btn" data-tab="videos">الفيديوهات (12)</button>
+                <button class="tab-link active" data-type="images">الصور (27)</button>
+                <button class="tab-link" data-type="videos">الفيديوهات (12)</button>
             </div>
 
             <!-- شبكة الصور -->
             <div id="imagesGrid" class="media-grid">
-                <!-- يتم توليد 27 صورة تلقائياً بواسطة JavaScript -->
+                <!-- سيتم إنشاء 27 صورة بواسطة JavaScript -->
             </div>
 
             <!-- شبكة الفيديوهات -->
             <div id="videosGrid" class="media-grid hidden">
-                <!-- يتم توليد 12 فيديو تلقائياً بواسطة JavaScript -->
+                <!-- سيتم إنشاء 12 فيديو بواسطة JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- لعبة الـ 10 معلومات (Local Storage & JSON Export) -->
+    <!-- لعبة الـ 10 معلومات (الحفظ المحلي والتصدير) -->
     <section class="section game-section">
         <div class="container">
             <div class="card game-card">
-                <h2 class="section-title">🎮 لعبة 10 معلومات عن الصحبة</h2>
-                <p class="section-desc">اكتبي إجاباتك لكل طرف واحتفظي بها محلياً أو شاركيها كملف ملف JSON.</p>
+                <h2 class="section-header">🎮 لعبة: قَد إيه عارفين بعض؟</h2>
+                <p class="section-desc">اكتبوا إجاباتكم هنا. يتم حفظها في متصفحكم فقط.</p>
 
-                <div class="party-selector">
-                    <button class="party-btn active" id="btnParty1">الطرف الأول (أنا)</button>
-                    <button class="party-btn" id="btnParty2">الطرف الثاني (صديقتي)</button>
+                <div class="player-switcher">
+                    <button class="player-btn active" id="btnPlayer1">الطرف الأول (أنا)</button>
+                    <button class="player-btn" id="btnPlayer2">الطرف الثاني (أنتِ)</button>
                 </div>
 
-                <form id="gameForm" class="game-form">
-                    <div id="questionsContainer" class="questions-list">
-                        <!-- تُنشأ 10 أسئلة ديناميكياً -->
+                <form id="answersForm">
+                    <div id="questionsInputList" class="questions-input-list">
+                        <!-- سيتم توليد الأسئلة بواسطة JavaScript -->
                     </div>
-
-                    <div class="game-actions">
-                        <button type="submit" class="btn btn-success">💾 حفظ الإجابات محلياً</button>
-                        <button type="button" id="exportBtn" class="btn btn-secondary">📥 تحميل الإجابات (JSON)</button>
-                        <label class="btn btn-outline file-label">
-                            📤 استيراد إجابات
+                    <div class="form-actions">
+                        <button type="submit" class="btn-success">💾 حفظ الإجابات محلياً</button>
+                        <button type="button" id="exportBtn" class="btn-secondary">📥 تحميل الإجابات (JSON)</button>
+                        <label class="btn-outline file-label">
+                            📤 استيراد ملف إجابات
                             <input type="file" id="importInput" accept=".json" class="hidden-file-input" />
                         </label>
                     </div>
                 </form>
-                <div id="gameStatus" class="status-message"></div>
+                <div id="gameStatus" class="status-text"></div>
             </div>
         </div>
     </section>
 
-    <!-- الرسالة الختامية -->
-    <footer class="footer">
+    <!-- التذييل والرسالة النهائية -->
+    <footer class="main-footer">
         <div class="container">
-            <p class="love-message">❤️ دمتِ لي أحسن وأجمل صديقة طوال العمر ❤️</p>
-            <small>© حكايتنا - ٨ شهور من الصحبة الوفية</small>
+            <p class="final-message">❤️ دمتِ لي شيئاً جميلاً لا ينتهي ❤️</p>
+            <p class="copyrights">حكايتنا - الذكرى الثامنة للصحبة | 2026</p>
         </div>
     </footer>
 
-    <!-- النافذة المنبثقة للصور (Lightbox) -->
+    <!-- عارض الصور الكبير (Lightbox) -->
     <div id="lightbox" class="lightbox hidden">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img id="lightboxImg" class="lightbox-content" src="" alt="صورة كبيرة" />
+        <span class="close-lightbox" id="closeLightbox">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="عرض كبير">
     </div>
 
     <script src="script.js"></script>
